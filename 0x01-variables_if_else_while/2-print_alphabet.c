@@ -1,4 +1,4 @@
-#include<unistd.h>
+#include<stdio.h>
 
 /**
  * main - Entry point
@@ -10,11 +10,6 @@
 
 int main(void)
 {
-	 putchar (char c)
-	{
-		write(1, &c, 1);
-		return (0);
-	}
 
 	char alpha;
 	alpha = 'a';
