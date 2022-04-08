@@ -11,10 +11,9 @@
 int main(void)
 {
 
-	char alpha;
-	alpha = 'a';
+	char alpha = 'a';
 
-	while ( alpha <= 'z')
+	while (alpha <= 'z')
 	{
 		putchar (alpha);
 		alpha++;
