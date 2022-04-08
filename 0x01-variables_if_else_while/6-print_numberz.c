@@ -3,22 +3,22 @@
 /**
  * main - Entry point
  *
- * Description: print all single digit numbers
+ * Description: print 0-9 using putchar
+ *              while using int variable
  *
  * Return: Always 0 (Success)
 */
 
 int main(void)
 {
-	char num = '0';
+	int num = 0;
 
-	while (num <= '9')
+	while (num <= 9)
 	{
-		putchar(num);
+		putchar(num + '0');
 		num++;
 	}
 	putchar('\n');
 
 	return (0);
 }
-

@@ -3,22 +3,21 @@
 /**
  * main - Entry point
  *
- * Description: print all single digit numbers
+ * Description: print a-z in reverse
  *
  * Return: Always 0 (Success)
 */
 
 int main(void)
 {
-	char num = '0';
+	char alpha = 'z';
 
-	while (num <= '9')
+	while (alpha >= 'a')
 	{
-		putchar(num);
-		num++;
+		putchar(alpha);
+		alpha--;
 	}
 	putchar('\n');
 
 	return (0);
 }
-

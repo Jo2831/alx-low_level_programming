@@ -3,13 +3,14 @@
 /**
  * main - Entry point
  *
- * Description: print all single digit numbers
+ * Description: print numbers of base16 in lowercase
  *
  * Return: Always 0 (Success)
 */
 
 int main(void)
 {
+	char alpha = 'a';
 	char num = '0';
 
 	while (num <= '9')
@@ -17,8 +18,13 @@ int main(void)
 		putchar(num);
 		num++;
 	}
+	while (alpha <= 'f')
+	{
+		putchar(alpha);
+		alpha++;
+	}
 	putchar('\n');
 
 	return (0);
-}
 
+}
