@@ -23,7 +23,7 @@ int main(void)
 		putchar(alpha1);
 		alpha1++;
 	}
-	putchar(\n);
+	putchar('\n');
 
 	return (0);
 }
