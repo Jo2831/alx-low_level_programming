@@ -8,10 +8,9 @@
  * Return: Always 0 (Success)
 */
 
-int main()
+int main(void)
 {
 	int comb = 0;
-	
 	while (comb <= 9)
 	{
 		putchar(comb + '0');
@@ -21,8 +20,7 @@ int main()
 			putchar(' ');
 		}
 
-		comb++;
-		
+		comb++;	
 
 	}
 	putchar('\n');
