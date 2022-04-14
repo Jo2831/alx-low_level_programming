@@ -1,26 +1,29 @@
-#include"main.h"
+#include "holberton.h"
 
 /**
- * print_diagonal - print a diagonal line
- *
- * @n: is the number of times the \ character
- *     should be printed
-*/
-
+ * print_diagonal - draw a diagonal line
+ * @n: number of times the '\' char is printed
+ * Description: Can only use _putchar to print
+ */
 void print_diagonal(int n)
 {
-	int postn, space;
+	int c, i;
 
-	if (n <= 0)
-		_putchar('\n');
-	else
+	c = 0;
+
+	while (n > 0)
 	{
-		for (postn = 1; postn <= n; ++postn)
+		i = c;
+		while (i > 0)
 		{
-			for (space = 1; space <= postn; ++space)
-				_putchar(' ');
-			_putchar(92); /*is equal to '/' char*/
-			_putchar('\n');
+			_putchar(' ');
+			i--;
 		}
+		_putchar('\\');
+		_putchar('\n');
+		c++;
+		n--;
 	}
+	if (c < 1)
+		_putchar('\n');
 }
