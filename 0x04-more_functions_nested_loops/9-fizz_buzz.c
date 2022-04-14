@@ -9,25 +9,27 @@
  *
  * Return: Always 0 (Success)
 */
+
 int main(void)
 {
-int c;
-c = 1;
-char jo[] = "Fizz";
-char miko[] = "Buzz";
-char noal[] = "FizzBuzz";
+	int num;
 
-while (c <= 100)
-{
-if (c % 3 == 0 && c % 5 == 0)
-printf("%s\t", noal);
-else if (c % 3 == 0)
-printf("%s\t", jo);
-else if (c % 5 == 0)
-printf("%s\t", miko);
-else
-printf("%d\t", c);
-c++;
-return (0);
+	for (num = 1; num <= 100; ++num)
+	{
+		if (num % 3 == 0 && !(num % 5 == 0))
+			printf("Fizz");
+		else if (num % 5 == 0 && !(num % 3 == 0))
+			printf("Buzz");
+		else if (num % 3 == 0 && num % 5 == 0)
+			printf("FizzBuzz");
+		else
+			printf("%d", num);
+
+		if (num != 100)
+			printf(" ");
+		else
+			printf("\n");
+	}
+
+	return (0);
 }
-
