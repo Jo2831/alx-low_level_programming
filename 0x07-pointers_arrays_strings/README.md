@@ -1,0 +1,1 @@
+all about 0x07 pointer projects on alx
