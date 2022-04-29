@@ -10,8 +10,15 @@
  *Return: argc
  */
 
-int main(int __attribute__((unused)) argc, char *argv[])
+int main(int argc, char __attribute__((unused)) *argv[])
 {
-printf("%d\n", argc);
-return (0);
+	int i = 0, m;
+
+	while (i < argc)
+	{
+		m = i;
+		i++;
+	}
+	printf("%d\n", m);
+	return (0);
 }
