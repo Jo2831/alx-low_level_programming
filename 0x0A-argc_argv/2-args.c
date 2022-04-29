@@ -1,3 +1,4 @@
+#include<stdlib.h>
 #include<stdio.h>
 /**
  *main - print all arguments
@@ -9,7 +10,7 @@
  *Return: 0
  */
 
-int main(int argc, char **argv)
+int main(int __attribute__((unused)) argc, char *argv[])
 {
 int i;
 i = 0;
