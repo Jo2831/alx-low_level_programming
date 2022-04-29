@@ -1,35 +1,31 @@
+#include "main.h"
 /**
- * _strspn - a function that gets the
- *           length of a prexif substring
- *
- * @s: pointer to string input
- * @accept: substring prefix to look for
- *
- * Return: the number of bytes in the initial segment
+*_strspn - search the number of bytes in the initial
+* segment of s which consist only of bytes from accept
+*@s:segment targeted
+*@accept:reference bytes container
+*
+*Return:returns the number of bytes in the initial
+* segment of s which consist only of bytes from accept
 */
-
 unsigned int _strspn(char *s, char *accept)
 {
-	int i, j, f;
+	unsigned int bytes = 0;
+	int i;
 
-	i = 0;
-	while (s[i] != '\0')
+	while (*s)
 	{
-		j = 0;
-		f = 1; /*flag status*/
-		while (accept[j] != '\0')
+		for (i = 0; accept[i]; i++)
 		{
-			if (s[i] == accept[j])
+			if (accept[i] == *s)
 			{
-				f = 0; /*success*/
+				bytes++;
 				break;
 			}
-			j++;
+			else if ((accept[i + 1]) == '\0')
+				return (bytes);
 		}
-		if (f == 1)
-			break;
-		i++;
+		s++;
 	}
-
-	return (i);
+	return (bytes);
 }
