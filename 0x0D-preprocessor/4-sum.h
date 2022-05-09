@@ -3,6 +3,6 @@
 
 #include<stdio.h>
 
-#define SUM(x, y) x+y
+#define SUM(x, y) ((x) + (y))
 
 #endif /* _sum_h*/
