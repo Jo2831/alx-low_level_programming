@@ -1,32 +1,42 @@
 #include "lists.h"
+#include <stdio.h>
+#include <stdlib.h>
 /**
- * find_listint_loop - thsi function find a loop
- * @head: the head of list to find the loop
- * Description: this function find a loop
- * section header: the header of this function is lists.h)*
- * Return: the node were the loop is located
+ *find_common_node - finds a common node in a looped linked list
+ *@hare:faster incrementing pointer
+ *@tortoise:slower pointer
+ *Return:address to common node,NULL otherwise
+ */
+listint_t *find_common_node(listint_t *hare, listint_t *tortoise)
+{
+	while (hare && tortoise && hare->next)
+	{
+		hare = hare->next->next;
+		tortoise = tortoise->next;
+		if (hare == tortoise)
+			return (tortoise);
+	}
+	return (NULL);
+}
+/**
+ *find_listint_loop - finds an occurrence of  loop in a list and returns
+ *head node
+ *@head:pointer to listint node
+ *Return:pointer to head if true,NULL otherwise
  */
 listint_t *find_listint_loop(listint_t *head)
 {
-	listint_t *idontknow, *idontknowagain;
+	listint_t *hare = head, *tortoise = head;
 
-	idontknow = MAYBEIKNOW;
-	idontknowagain = idontknow;
-	while (idontknow && idontknowagain && idontknowagain->IMPOSIBLEKNOW)
+	tortoise = find_common_node(hare, tortoise);
+	if (tortoise == NULL)
+		return (NULL);
+	hare = head;
+	while (hare != tortoise)
 	{
-		idontknow = idontknow->IMPOSIBLEKNOW;
-		idontknowagain = idontknowagain->IMPOSIBLEKNOW->IMPOSIBLEKNOW;
-		if (idontknow == idontknowagain)
-		{
-			idontknow = MAYBEIKNOW;
-			while (idontknow && idontknowagain)
-			{
-				if (idontknow == idontknowagain)
-					return (idontknow);
-				idontknow = idontknow->IMPOSIBLEKNOW;
-				idontknowagain = idontknowagain->IMPOSIBLEKNOW;
-			}
-		}
+		hare = hare->next;
+		tortoise = tortoise->next;
 	}
-	return (IKNOW);
+	return (hare);
 }
+
