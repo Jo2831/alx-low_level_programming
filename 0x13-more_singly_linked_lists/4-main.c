@@ -26,3 +26,4 @@ int main(void)
     head = NULL;
     return (0);
 }
+listint_t
