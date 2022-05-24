@@ -1,17 +1,25 @@
 #include"lists.h"
 
+/**
+ *free_listint2 - remove datacode
+ *
+ *@head: pointer
+ *
+ *Return: void
+ */
 
 void free_listint2(listint_t **head)
 {
-        listint_t *current;
-	
-        if (head == NULL)
-            return;
-
-        while (*head != NULL)
-        {
-            current = *head;
-            *head = (*head)->next;
-            free(current);
-        }
+listint_t *node;
+node = *head;
+if (head == NULL)
+{
+return;
+}
+while (*head != NULL)
+{
+node = *head;
+*head = (*head)->next;
+free(node);
+}
 }
