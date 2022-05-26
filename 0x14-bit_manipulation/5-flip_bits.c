@@ -1,23 +1,23 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
- * flip_bits - number of bits you would need to flip
- * to get from one number to another
- * @n: parameter
- * @m: destiny
- * Return: nflips
- */
+*flip_bits - gets the number of bits to flip to get from n to m
+*@n: initial number
+*@m: final number
+*
+*Return: the number of flipped bits
+*/
+
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	unsigned int i, nflips = 0;
-	unsigned long int j = sizeof(unsigned long int) * 8;
+	unsigned long int flipped = n ^ m;
+	int count = 0;
 
-	for (i = 0; i < j; i++)
+	while (flipped)
 	{
-		if ((m & 1) != (n & 1))
-			nflips += 1;
-		n = n >> 1;
-		m = m >> 1;
+		if (flipped & 1)
+			count++;
+		flipped >>= 1;
 	}
-	return (nflips);
+	return (count);
 }
