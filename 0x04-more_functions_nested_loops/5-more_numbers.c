@@ -1,28 +1,19 @@
-#include"main.h"
+#include "main.h"
 
 /**
- * more_numbers - print 0 - 14 ten times and you
- *		can only use _putchar three times
- *
- * Return: Always 0 (Success)
-*/
+  * print_most_numbers - prints digits except 2 and 4
+  */
 
-void more_numbers(void)
+void print_most_numbers(void)
 {
-	int num, row, count;
+	int numbers = 48;
 
-	for (row = 1; row <= 10; ++row)
+	while (numbers < 58)
 	{
-		for (count = 0; count <= 14; ++count)
-		{
-			num = count;
-			if (count > 9)
-			{
-				_putchar(1 + 48);
-				num = count % 10;
-			}
-			_putchar(num + 48);
-		}
-		_putchar('\n');
+		if (numbers != 50 && numbers != 52)
+			_putchar(numbers);
+		numbers++;
 	}
+	_putchar('\n');
 }
+
