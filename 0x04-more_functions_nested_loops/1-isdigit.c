@@ -1,17 +1,15 @@
-#include"main.h"
-#include<stdio.h>
+#include "main.h"
+
 /**
- * _isdigit - checks if input is digit between 0 - 9
- *
- * @c: input
- *
- * Return: 1 if is digit, 0 if not
-*/
+  * _isdigit - checks for the digits
+  * @c: an int argumet passed to function _isdigit
+  * Return: 0
+  */
 
 int _isdigit(int c)
 {
-if (c >= 48 && c <= 57)
-return (1);
-else
-return (0);
+	if (c >= 48 && c <= 57)
+		return (1);
+	else
+		return (0);
 }
