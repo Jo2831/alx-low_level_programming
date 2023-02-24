@@ -1,29 +1,31 @@
 #include "main.h"
 
 /**
- * print_diagonal - draw a diagonal line
- * @n: number of times the '\' char is printed
- * Description: Can only use _putchar to print
- */
+  * print_diagonal - prints the character in diagonal
+  * @n: an argument passed to print_diagonal to receive the number of
+  */
+
 void print_diagonal(int n)
 {
-	int c, i;
+	int rows, cols;
 
-	c = 0;
-
-	while (n > 0)
+	if (n > 0)
 	{
-		i = c;
-		while (i > 0)
+		for (rows = 1; rows <= n; rows++)
 		{
-			_putchar(' ');
-			i--;
+			for (cols = 0; cols < rows ; cols++)
+			{
+				if (cols != (rows - 1))
+					_putchar(' ');
+				else
+					_putchar(92);
+			}
+
+			_putchar('\n');
 		}
-		_putchar('\\');
-		_putchar('\n');
-		c++;
-		n--;
 	}
-	if (c < 1)
+
+	else
 		_putchar('\n');
 }
+
