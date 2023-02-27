@@ -1,28 +1,28 @@
-#include"main.h"
+#include "main.h"
 
 /**
- * rot13 - encodes a string into rot13
- * @s: string to encode
- *
- * Return: address of s
+ * rot13 - encrypts the string to its rot13 version
+ * @s: a string argument to be encrypted
+ * Return: returns a pointer to encrypted message
  */
 
 char *rot13(char *s)
 {
-	int i, j;
-	char a[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	char b[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+	int i = 0, j;
+	char *alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char *map_rot = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	for (i = 0; *(s + i); i++)
+	for (; s[i] != '\0'; i++)
 	{
 		for (j = 0; j < 52; j++)
 		{
-			if (a[j] == *(s + i))
+			if (s[i] == alpha[j])
 			{
-				*(s + i) = b[j];
+				s[i] = map_rot[j];
 				break;
 			}
 		}
 	}
+
 	return (s);
 }
